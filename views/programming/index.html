@@ -1,0 +1,18 @@
+<div class="row">
+
+	<div class="col">
+		<div class="span3">
+			<div class="well" style="width: 400px;">
+				<div class="subjectHeader">Subjects Other</div><br>
+				<ul ng-repeat="subject in subjects">
+					<li> <div class="well">
+						<div class="subsubjectHeader">{{subject.subject}}</div> 
+							<div class="subjectInfo">
+								Replies: {{subject.numSubs}}, <br>
+								latest reply: {{subject.latest}}</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

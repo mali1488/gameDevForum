@@ -1,0 +1,232 @@
+/* app css stylesheet */
+
+body {
+  background-image: url('img/grey_wash_wall_@2X.png');
+}
+
+ul {         
+  padding:0 0 0 0;
+  margin:0 0 0 0;
+}
+
+ul li {     
+  list-style:none;
+  margin-bottom:0px;  
+  vertical-align: top;  
+
+}
+
+/* subject header text*/
+.subjectHeader {
+  font-family:Myriad Pro;
+  font-weight: 900;
+  font-size:20px;
+}
+
+.subsubjectHeader {
+  font-family:Myriad Pro;
+  font-weight: 700;
+  font-size:15px;
+}
+/* subject info text*/
+.subjectInfo {
+  font-family:Myriad Pro;
+  font-size:10px;
+
+}
+
+/* Homepage header text */
+#homeHeader {
+  font-family:Brush Script MT;
+  font-size: 40px;
+}
+
+.textHeader {
+  font-family:Myriad Pro;
+  padding-left:10px;
+
+}
+.textRegular {
+  font-family:Myriad Pro;
+  padding-left:10px;
+}
+
+/* navbar */
+.navbar-default {
+  background-color: #1fb58a;
+  border-color: #1fb58a;
+}
+.navbar-default .navbar-brand {
+  color: #ffffff;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #164e3e;
+}
+.navbar-default .navbar-text {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #164e3e;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #164e3e;
+  background-color: #1fb58a;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #164e3e;
+  background-color: #1fb58a;
+}
+.navbar-default .navbar-toggle {
+  border-color: #1fb58a;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #1fb58a;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ffffff;
+  background-color: #12664e;
+}
+.navbar-default .navbar-link {
+  color: #ffffff;
+}
+.navbar-default .navbar-link:hover {
+  color: #164e3e;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #164e3e;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #164e3e;
+    background-color: #1fb58a;
+  }
+}
+#glypIcon {
+	position: absolute;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/*!
+* Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.
+*/
+/* Toggle Styles */
+#wrapper {
+	padding-left: 0;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+#wrapper.toggled {
+	padding-left: 250px;
+}
+#sidebar-wrapper {
+	z-index: 1000;
+	position: fixed;
+	left: 250px;
+	width: 0;
+	height: 100%;
+	margin-left: -250px;
+	overflow-y: auto;
+	background: #000;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+	width: 250px;
+}
+
+/*
+	css for ng-view
+*/
+#page-content-wrapper {
+	width: 100%;
+	position: absolute;
+	padding: 200px;
+	margin-left: -250px;
+	margin-top: 30px; 
+}
+/* currently not in use */
+#wrapper.toggled #page-content-wrapper {
+	position: absolute;
+	margin-right: -250px;
+}
+
+/* Sidebar Styles */
+.sidebar-nav {
+position: absolute;
+top: 0;
+width: 250px;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+.sidebar-nav li {
+text-indent: 20px;
+line-height: 40px;
+}
+.sidebar-nav li a {
+display: block;
+text-decoration: none;
+color: #999999;
+}
+.sidebar-nav li a:hover {
+text-decoration: none;
+color: #fff;
+background: rgba(255,255,255,0.2);
+}
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+text-decoration: none;
+}
+.sidebar-nav > .sidebar-brand {
+height: 65px;
+font-size: 18px;
+line-height: 60px;
+}
+.sidebar-nav > .sidebar-brand a {
+color: #999999;
+}
+.sidebar-nav > .sidebar-brand a:hover {
+color: #fff;
+background: none;
+}
+@media(min-width:768px) {
+#wrapper {
+padding-left: 250px;
+}
+#wrapper.toggled {
+padding-left: 0;
+}
+#sidebar-wrapper {
+width: 250px;
+}
+#wrapper.toggled #sidebar-wrapper {
+width: 0;
+}
+#page-content-wrapper {
+padding: 20px;
+position: relative;
+}
+#wrapper.toggled #page-content-wrapper {
+position: relative;
+margin-right: 0;
+}
+}
