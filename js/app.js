@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('Measures', ['pascalprecht.translate','ngCookies','ngRoute', 'ngResource','ngDragDrop', 'ui.bootstrap.modal',
+angular.module('Measures', ['ngAnimate','pascalprecht.translate','ngCookies','ngRoute', 'ngResource','ngDragDrop', 'ui.bootstrap.modal',
 	'ui.bootstrap.accordion','ui.bootstrap','template/accordion/accordion-group.html','template/accordion/accordion.html'])
 
 .config(['$routeProvider',  '$translateProvider', function($routeProvider,$translateProvider) { 
@@ -28,7 +28,7 @@ angular.module('Measures', ['pascalprecht.translate','ngCookies','ngRoute', 'ngR
   }).
   when('/requirements',{
     templateUrl : 'views/requirements/index.html',
-    controller : 'ProgrammingCtrl'
+    controller : 'RequirementsCtrl'
   }).
   when('/other',{
     templateUrl : 'views/other/index.html',

@@ -1,5 +1,4 @@
 /* app css stylesheet */
-
 body {
   background-image: url('img/grey_wash_wall_@2X.png');
 }
@@ -16,11 +15,50 @@ ul li {
 
 }
 
+.settingsText{
+  font-family:Myriad Pro;
+  padding-left:10px;
+}
+
+/* ng-view opacity animation*/
+.reveal-animation.ng-enter {
+  -webkit-animation: enter_sequence 1s linear; /* Safari/Chrome */
+  animation: enter_sequence 0.5s linear; /* IE10+ and Future Browsers */
+}
+@-webkit-keyframes enter_sequence {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+@keyframes enter_sequence {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+.outer-well {
+  width: 250px;
+}
+
+.inner-well{
+  width: 850px;
+}
+
+.inner-col{
+  padding-left:80px!important;
+}
+
+.subject-col{
+  padding-left:30px;
+}
+
+.mouseIsOver:hover{
+  background-color : #d5d5d5;
+}
+
 /* subject header text*/
 .subjectHeader {
-  font-family:Myriad Pro;
+  font-family : Myriad Pro;
   font-weight: 900;
-  font-size:20px;
+  font-size : 20px;
 }
 
 .subsubjectHeader {

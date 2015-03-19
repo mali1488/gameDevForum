@@ -7,4 +7,15 @@ angular.module('Measures')
 	{subject: "Erlang",numSubs: 10, latest: 'Matio at 05.10.12 13:45'},
 	{subject: "Unreal engine",numSubs: 10, latest: 'Matio at 05.10.12 13:45'},
 	{subject: "Unity",numSubs: 10, latest: 'Matio at 05.10.12 13:45'}];
-}]);
+	
+	$scope.slide = false;
+
+	$scope.slideC = function(){
+		console.log("slide");
+		if($scope.slide === true) {
+			$scope.slide = false;
+		} else {
+			$scope.slide = true;
+		}
+	}
+}]); 

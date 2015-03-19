@@ -1,18 +1,29 @@
 <div class="row">
 
-	<div class="col">
+	<div class="col-md-2 subject-col">
 		<div class="span3">
-			<div class="well" style="width: 400px;">
+			<div class="well outer-well">
 				<div class="subjectHeader">Subjects Game Ideas</div><br>
 				<ul ng-repeat="subject in subjects">
-					<li> <div class="well">
-						<div class="subsubjectHeader">{{subject.subject}}</div> 
+					<li>
+						<div class="well mouseIsOver">
+							<div class="subsubjectHeader">
+								{{subject.subject}}
+							</div> 
 							<div class="subjectInfo">
 								Replies: {{subject.numSubs}}, <br>
-								latest reply: {{subject.latest}}</div>
+								latest reply: {{subject.latest}}
+							</div>
+						</div>
 					</li>
 				</ul>
 			</div>
 		</div>
-	</div>
-</div>
+	</div><!-- col -->
+
+	<div class="col-md-8 inner-col">
+		<div class="well inner-well">
+			Forum content
+		</div>
+	</div><!-- col -->
+</div><!-- row -->
