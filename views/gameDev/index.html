@@ -1,6 +1,22 @@
-<div >
+<div class="container" align="center">
 	<h3 class="textHeader">{{ 'WELCOME_MESSAGE' | translate}}</h3>
 	<div class="textRegular">
 		{{ 'WELCOME_INFO' | translate }}
+		<br><br>
+
+		<i>{{ 'LATEST' | translate }}</i>
+	</div>
+
+</div>
+
+	<div class="container" align="center">
+		<div class="well latest-well" align="center" ng-repeat="reply in latest">
+		{{reply.reply}}
+		<div class="reply-text">
+			Written by: {{reply.user}}, at: {{reply.time}}, {{reply.date}}
+			<br>
+			in {{reply.subsubject}}
+		</div>
+		</div>
 	</div>
 </div>

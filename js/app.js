@@ -5,7 +5,7 @@ angular.module('Measures', ['ngAnimate','pascalprecht.translate','ngCookies','ng
 
 .config(['$routeProvider',  '$translateProvider', function($routeProvider,$translateProvider) { 
   $translateProvider.translations('en', {
-    WELCOME_MESSAGE: 'Welcome to GameDev', WELCOME_INFO : 'Press the button left of the header to se forums',
+    WELCOME_MESSAGE: 'Welcome to GameDev', WELCOME_INFO : 'Press the button left of the header to se forums.', LATEST: 'Latest reply:',
     SETTINGS: 'Settings and contacts',
     GAMEIDEAS: 'Game ideas',
     PROGRAMMING: 'Programming',

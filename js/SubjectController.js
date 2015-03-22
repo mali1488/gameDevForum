@@ -1,6 +1,6 @@
 angular.module('Measures')
 
-.controller('SubjectCtrl', ['$cookieStore','$scope','$rootScope', function($cookieStore,$scope,$rootScope){
+.controller('SubjectCtrl', ['Forum','$cookieStore','$scope','$rootScope', function(Forum, $cookieStore,$scope,$rootScope){
 	// TODO: Hardcoded information for testing interface design. Change this to factory call
 	$scope.subjects = [{subject: "Objective-c", numSubs: 10, latest: 'Matio at 10.10.12 14:45'}, 
 	{subject: "Swift",numSubs: 10, latest: 'Matio at 01.10.12 14:14'}, 
@@ -20,9 +20,17 @@ angular.module('Measures')
 	$scope.subject = $cookieStore.get('choice');
 	$scope.val = "";
 
-	console.log("choice: ",$scope.subject);
 	$scope.Subsubject = "";
 	$scope.showSubsubject = false;
+
+	Forum.getForum($scope.subject).success( function(data) {
+		console.log(data);
+		var obj = jQuery.parseJSON(data);
+		console.log(obj.item);
+		//console.log($scope.replies);
+		});
+
+	//console.log(testDb);
 
 	$scope.changeForum = function(subject) {
 		$scope.Subsubject = subject;
