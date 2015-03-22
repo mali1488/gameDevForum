@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-md-2 subject-col">
+		<div class="span3">
+			<div class="well outer-well">
+				<div class="subjectHeader">{{subject}}</div><br>
+				<ul ng-repeat="subject in subjects">
+					<li> 
+						<div class="well mouseIsOver" ng-click="changeForum(subject.subject)">
+							<div class="subsubjectHeader">
+								{{subject.subject}}
+							</div> 
+							<div class="subjectInfo">
+								Replies: {{subject.numSubs}}, <br>
+								latest reply: {{subject.latest}}
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div><!-- col -->
+
+	<div class="col-md-8 inner-col" ng-show="showSubsubject">
+			<div class="well inner-well">
+				<div class="subsubjectHeader">{{Subsubject}}</div><br>
+				<!-- Do ng repeat on this -->
+				<div class="well forum-reply" ng-repeat="reply in replies">
+					{{reply.reply}}
+					<br><br>
+					<div class="reply-text">
+						Written by: {{reply.user}}, at: {{reply.time}}
+					</div>
+				</div>
+
+				<!-- reply input textfield -->
+				<form name="replyForm">
+					<form class="border-input form-inline">
+						<textarea class="border-input" rows="3" style="width:600px" ng-model="val"></textarea>
+				</form>
+					<br>
+					<button class="btn btn-primary" ng-click="newReply(val)">Reply</button>
+					<br>{{val}}
+				</form>
+			</div>
+	</div><!-- col -->
+
+
+
+</div><!-- row -->
