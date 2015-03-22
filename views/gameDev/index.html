@@ -13,9 +13,10 @@
 		<div class="well latest-well" align="center" ng-repeat="reply in latest">
 		{{reply.reply}}
 		<div class="reply-text">
+			<br>
 			Written by: {{reply.user}}, at: {{reply.time}}, {{reply.date}}
 			<br>
-			in {{reply.subsubject}}
+			from {{reply.subsubject}} in {{reply.subject}}
 		</div>
 		</div>
 	</div>

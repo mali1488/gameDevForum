@@ -10,7 +10,7 @@
 								{{subject.subject}}
 							</div> 
 							<div class="subjectInfo">
-								Replies: {{subject.numSubs}}, <br>
+								Replies: {{subject.replies}}, <br>
 								latest reply: {{subject.latest}}
 							</div>
 						</div>
@@ -20,7 +20,7 @@
 		</div>
 	</div><!-- col -->
 
-	<div class="col-md-8 inner-col" ng-show="showSubsubject">
+	<div class="col-md-8 inner-col" ng-show="showSubsubject" class="reveal-animation">
 			<div class="well inner-well">
 				<div class="subsubjectHeader">{{Subsubject}}</div><br>
 				<!-- Do ng repeat on this -->
