@@ -34,6 +34,19 @@ ul li {
   to { opacity:1; }
 }
 
+.border-input {
+  border-radius:4px;
+  border: 1px solid #DDD;
+}
+
+.reply-text {
+  font-family:Myriad Pro;
+  font-size : 10px;
+}
+
+.subsubjectHeader {
+  font-size : 20px;
+}
 .outer-well {
   width: 250px;
 }

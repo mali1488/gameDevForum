@@ -1,6 +1,6 @@
 angular.module('Measures')
 
-.controller('MainCtrl',['$translate','$rootScope', '$scope', function($translate,$scope, $rootScope) {
+.controller('MainCtrl',['$cookieStore','$translate','$rootScope', '$scope', function($cookieStore,$translate,$scope, $rootScope) {
 	$rootScope.toggle = true;
 	$scope.isCollapsed = true;
 	$translate.use('en');
@@ -29,5 +29,9 @@ angular.module('Measures')
 			$rootScope.toggle = true;
 		}
 	}
+
+	$scope.setForum = function(choice) {
+		$cookieStore.put('choice',choice);
+	}	
 	
 }]);

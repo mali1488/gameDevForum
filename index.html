@@ -46,16 +46,16 @@
       <div class="nav-collapse" collapse="toggle">
           <ul class="nav navbar-nav ">
           	<li>
-    					<a href="#gameIdeas">{{ 'GAMEIDEAS' | translate }}</a>
+    					<a href="#gameIdeas" ng-click="setForum('Game ideas')">{{ 'GAMEIDEAS' | translate }}</a>
     				</li>
     				<li>
-    					<a href="#programming">{{ 'PROGRAMMING' | translate }}</a>
+    					<a href="#programming" ng-click="setForum('Programming')">{{ 'PROGRAMMING' | translate }}</a>
     				</li>
     				<li>
-    					<a href="#requirements">{{ 'REQUIREMENTS' | translate }}</a>
+    					<a href="#requirements" ng-click="setForum('Requirements')">{{ 'REQUIREMENTS' | translate }}</a>
     				</li>
     				<li>
-    					<a href="#other">{{ 'OTHER' | translate }}</a> 
+    					<a href="#other" ng-click="setForum('Other')">{{ 'OTHER' | translate }}</a> 
           </ul>
 
           <ul class="nav navbar-nav pull-right">
@@ -80,7 +80,6 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
   <script src="js/angular-route/angular-route.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
   <script src="js/angular-locale_sv.js"></script>
   <script src="js/angular-bootstrap/ui-bootstrap.js"></script>
   <script src="js/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -94,7 +93,12 @@
   <script src="js/SettingsController.js"></script>
   <script src="js/RequirementsController.js"></script>
   <script src="js/GamedevController.js"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-animate.min.js"></script>
   <script src="//code.angularjs.org/X.Y.Z/angular-animate.js"></script>
+  <script src="js/SubjectController.js"></script>
+  <!--<script stc="js/angular-animate/angular-animate.js"></script>
+  <script stc="js/angular-animate/angular-animate.min.js"></script>-->
   <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 </body>
 </html>

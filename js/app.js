@@ -19,20 +19,20 @@ angular.module('Measures', ['ngAnimate','pascalprecht.translate','ngCookies','ng
   	controller: 'GamedevCtrl'
   }).
   when('/gameIdeas',{
-    templateUrl : 'views/gameIdeas/index.html',
-    controller : 'GameideaCtrl'
+    templateUrl : 'views/forum/index.html',
+    controller : 'SubjectCtrl'
   }).
   when('/programming',{
-    templateUrl : 'views/programming/index.html',
-    controller: 'ProgrammingCtrl'
+    templateUrl : 'views/forum/index.html',
+    controller: 'SubjectCtrl'
   }).
   when('/requirements',{
-    templateUrl : 'views/requirements/index.html',
-    controller : 'RequirementsCtrl'
+    templateUrl : 'views/forum/index.html',
+    controller : 'SubjectCtrl'
   }).
   when('/other',{
-    templateUrl : 'views/other/index.html',
-    controller: 'OtherCtrl'
+    templateUrl : 'views/forum/index.html',
+    controller: 'SubjectCtrl'
   }).
   when('/settings',{
     templateUrl : 'views/settings/index.html',
