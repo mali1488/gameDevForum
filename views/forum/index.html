@@ -3,6 +3,19 @@
 		<div class="span3">
 			<div class="well outer-well">
 				<div class="subjectHeader">{{subject}}</div><br>
+				<button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed" ng-show="isCollapsed"> Add subject </button>
+				<button class="btn btn-primary" ng-click="isCollapsed = !isCollapsed; addSubject(newSubject)" ng-show="!isCollapsed"> Press to add! </button>
+				<br>	
+				<hr>
+					<div collapse="isCollapsed">
+						<div class="well">
+							<form name="replyForm">
+							<form class="border-input form-inline">
+								<textarea class="border-input" rows="3" style="width:150px" ng-model="newSubject"></textarea>
+							</form>
+						</div>
+					</div>
+
 				<ul ng-repeat="subject in subjects">
 					<li> 
 						<div class="well mouseIsOver" ng-click="changeForum(subject.subject)">
@@ -39,7 +52,7 @@
 				</form>
 					<br>
 					<button class="btn btn-primary" ng-click="newReply(val)">Reply</button>
-					<br>{{val}}
+					<br>
 				</form>
 			</div>
 	</div><!-- col -->
