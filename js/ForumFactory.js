@@ -11,13 +11,14 @@ angular.module('Measures')
 		getLatest: function() {
 			return $.get(dbUrl + "?latest=latestreply");
 		},
-		insertReply: function(user, subject, subsubject, reply) {
-			return $.get(dbUrl + "?insertReply=" +  reply + "&subject=" + subject + "&subsubject=" + subsubject + "&user=" + user);;
+		insertReply: function(username, subject, subsubject, reply) {
+			return $.get(dbUrl + "?insertReply=" +  reply + "&subject=" + subject + "&subsubject=" + subsubject + "&user=" + username);;
 		},
 		insertSubject: function(subject, category) {			
-			console.log(subject);
-			console.log(category);
 			return $.get(dbUrl + "?newSubject=" + subject + "&category=" + category);
+		},
+		getLatestForumReplies: function() {
+			return $.get(dbUrl + "?latestForumReplies=get");
 		}
 	}
 });

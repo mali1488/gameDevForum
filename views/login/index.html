@@ -1,0 +1,22 @@
+<!--<div class="container center">-->
+<div class="row">
+		<div class="col-md-2 col-md-offset-5 top-buffer">
+		<p style="color:#12664e"><b>{{ 'USERNAME' | translate }}</b></p>
+		<input ng-keypress="($event.which === 13)?authenticate(User):0" type="text" ng-model="User.name" class="form-control"  id="usernameInput" value="Username">
+	</div>
+</div>
+
+<br>
+<div class="row">
+	<div class="col-md-2 col-md-offset-5" >
+		<p style="color:#12664e"><b>{{ 'PASSWORD' | translate}}</b></p>
+		<input ng-keypress="($event.which === 13)?authenticate(User):0" type="text" ng-model="User.password" class="form-control" id="passwordInput" value="User.password"><br>
+		
+	</div>
+	<div class="row">
+		<div class="col-md-1 col-md-offset-5">
+		<button ng-click="authenticate(User)" class="btn btn-primary">{{ 'LOGIN' | translate}}</button>
+		</div>
+	</div>
+
+</div>

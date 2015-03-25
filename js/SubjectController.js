@@ -1,6 +1,6 @@
 angular.module('Measures')
 
-.controller('SubjectCtrl', ['Forum','$cookieStore','$scope','$rootScope', function(Forum, $cookieStore,$scope,$rootScope){	
+.controller('SubjectCtrl', ['$location','Forum','$cookieStore','$scope','$rootScope', function($location,Forum, $cookieStore,$scope,$rootScope){	
 
 	$scope.replies = [];
 	$scope.subjects = [];
@@ -10,7 +10,12 @@ angular.module('Measures')
 	$scope.val = "";
 	$scope.Subsubject = "";
 	$scope.showSubsubject = false;
-	$scope.user = 'RandomUser';
+
+	$scope.user = $cookieStore.get('user');
+
+	if ($scope.user === undefined) {
+		$location.path('/login');
+	}
 
 	Forum.getSubjects($scope.subject).success( function(data) {
 		var obj = jQuery.parseJSON(data);
@@ -18,6 +23,36 @@ angular.module('Measures')
 			$scope.subjects = obj.item;
 		});
 	});
+	
+	
+	$scope.assingLatestReplies = function() {
+		Forum.getLatestForumReplies().success( function(data) {
+			//console.log("DATA LATEST REPLY: ",data);
+			var obj = jQuery.parseJSON(data);
+			var replies = obj.item;
+			var length = $scope.subjects.length;
+			for(var i = 0 ; i < length; i++) {
+				var lengthTwo = replies.length;
+				for(var j = 0; j < lengthTwo; j++) {
+					var str = $scope.subjects[i].subject.toLowerCase();
+					if (str.search(replies[j].subsubject) != -1) {
+						//console.log(str);
+						//console.log(replies[j].subsubject)
+						$scope.$apply( function() {
+							$scope.subjects[i].latest = replies[j];
+							//console.log($scope.subjects[i])
+						});
+						//console.log(replies[j].reply);
+					} else {
+						//console.log('noHit');
+					}
+					//console.log("------------");
+				}
+			}	
+		});
+	}
+	$scope.assingLatestReplies();
+
 
 	$scope.changeForum = function(subject) {
 		$scope.Subsubject = subject;
@@ -54,18 +89,18 @@ angular.module('Measures')
 	}
 	
 	$scope.newReply = function(reply) {
-		Forum.insertReply($scope.user,$scope.subject.toLowerCase(),$scope.Subsubject.toLowerCase(), reply);
-		// TODO make call to Forum to add the replie to database
-		var reply = {user:$scope.user, reply: reply, date:10,time:10};
-		//$scope.replies.push(reply);
-		//$scope.val = "";
-		Forum.getForum($scope.subject,$scope.Subsubject).success( function(data) {
-			var obj = jQuery.parseJSON(data);
-			$scope.$apply(function() {
-				$scope.replies = obj.item;
-			});
+		if (reply === undefined) {
+			console.log("cant add empty reply");
+		} else {
+			Forum.insertReply($scope.user.name,$scope.subject.toLowerCase(),$scope.Subsubject.toLowerCase(), reply);
+			Forum.getForum($scope.subject,$scope.Subsubject).success( function(data) {
+				var obj = jQuery.parseJSON(data);
+				$scope.$apply(function() {
+					$scope.replies = obj.item;
+				});
 
-		});
+			});
+		}
 	}
 
 }]); 

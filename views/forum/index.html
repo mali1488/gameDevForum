@@ -23,8 +23,9 @@
 								{{subject.subject}}
 							</div> 
 							<div class="subjectInfo">
-								Replies: {{subject.replies}}, <br>
-								latest reply: {{subject.latest}}
+								Replies: {{subject.replies}}, <br><br>
+								latest reply: {{subject.latest.reply}} <br>
+								made by: {{subject.latest.user}} at <br>{{subject.latest.date}},  {{subject.latest.time}}
 							</div>
 						</div>
 					</li>

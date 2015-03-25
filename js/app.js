@@ -5,12 +5,15 @@ angular.module('Measures', ['ngAnimate','pascalprecht.translate','ngCookies','ng
 
 .config(['$routeProvider',  '$translateProvider', function($routeProvider,$translateProvider) { 
   $translateProvider.translations('en', {
-    WELCOME_MESSAGE: 'Welcome to GameDev', WELCOME_INFO : 'Press the button left of the header to se forums.', LATEST: 'Latest reply:',
+    WELCOME_MESSAGE: 'Welcome to GameDev', WELCOME_INFO : 'Press the menu icon in the top right to see the different forums.', LATEST: 'Latest reply:',
     SETTINGS: 'Settings and contacts',
     GAMEIDEAS: 'Game ideas',
     PROGRAMMING: 'Programming',
     OTHER: 'Other',
-    REQUIREMENTS: 'Requirements'
+    REQUIREMENTS: 'Requirements',
+    USERNAME: 'Username',
+    PASSWORD: 'Password',
+    LOGIN: 'Login'
   }),
 
   $routeProvider.when('/gameDev',					  
@@ -37,6 +40,10 @@ angular.module('Measures', ['ngAnimate','pascalprecht.translate','ngCookies','ng
   when('/settings',{
     templateUrl : 'views/settings/index.html',
     controller : 'SettingsCtrl'
+  }).
+  when('/login',{
+    templateUrl : 'views/login/index.html',
+    controller : 'LoginCtrl'
   }).
   otherwise(
   {
